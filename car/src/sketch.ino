@@ -1,6 +1,6 @@
-#define TOP_LEFT		 2
-#define TOP_RIGHT		 3
-#define BOTTOM_LEFT	 4
+#define TOP_LEFT 2
+#define TOP_RIGHT 3
+#define BOTTOM_LEFT 4
 #define BOTTOM_RIGHT 5
 #define PWM_PIN 6
 
