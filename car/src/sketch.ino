@@ -12,6 +12,10 @@
 #define ALUMINUM_VAL
 #define STEEL_VAL
 
+#define LIGHT_POWER 7
+#define LIGHT_SENSOR A0
+#define SAMPLES 50
+
 int block_count = 10;
 int blocks[10];
 int nextBlockVal;
@@ -67,6 +71,19 @@ bool isBlock() {
 
 // reads the optical measurement of block
 int blockVal() {
+	long temp = 0;
+	unsigned int hi;
+	for (unsigned int i = 0; i < SAMPLES; i++)
+	{
+		digitalWrite(LIGHT_POWER, HIGH);
+		delay(1);
+		hi = analogRead(LIGHT_SENSOR);
+		digitalWrite(LIGHT_POWER, LOW);
+		delay(1);
+		temp += analogRead(LIGHT_SENSOR) - hi;
+	}
+	temp /= SAMPLES;
+	return (int) temp;
 }
 
 void forward(int speed) {
