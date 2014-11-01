@@ -101,3 +101,10 @@ void reverse(int speed) {
 	digitalWrite(BOTTOM_RIGHT, LOW);
 	analogWrite(PWM_PIN, speed);
 }
+
+void brake() {
+	digitalWrite(TOP_LEFT, LOW);
+	digitalWrite(TOP_RIGHT, LOW);
+	digitalWrite(BOTTOM_LEFT, HIGH);
+	digitalWrite(BOTTOM_RIGHT, HIGH);
+}
