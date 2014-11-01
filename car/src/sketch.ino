@@ -13,19 +13,20 @@ void setup() {
 }
 
 void loop() {
+	forward(128);
 }
 
 void forward(int speed) {
-	digitalWrite(TOP_LEFT, HIGH);
-	digitalWrite(TOP_RIGHT, LOW);
+	digitalWrite(TOP_LEFT, LOW);
+	digitalWrite(TOP_RIGHT, HIGH);
 	digitalWrite(BOTTOM_LEFT, LOW);
 	digitalWrite(BOTTOM_RIGHT, HIGH);
 	analogWrite(PWM_PIN, speed);
 }
 
 void reverse(int speed) {
-	digitalWrite(TOP_LEFT, LOW);
-	digitalWrite(TOP_RIGHT, HIGH);
+	digitalWrite(TOP_LEFT, HIGH);
+	digitalWrite(TOP_RIGHT, LOW);
 	digitalWrite(BOTTOM_LEFT, HIGH);
 	digitalWrite(BOTTOM_RIGHT, LOW);
 	analogWrite(PWM_PIN, speed);
