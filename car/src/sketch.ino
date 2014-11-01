@@ -26,16 +26,11 @@ void setup() {
 	pinMode(BOTTOM_LEFT, OUTPUT);
 	pinMode(BOTTOM_RIGHT, OUTPUT);
 	pinMode(PWM_PIN, OUTPUT);
+	pinMode(
 }
 
 void loop() {
-	while (block_count < NUM_BLOCKS) {
-		forward(SPEED);
-		while (not isBlock());
-		block_count++;
-		blocks[block_count] = blockVal();
-	}
-	calcNextBlock();
+	Serial.println(blockVal());
 }
 
 void calcNextBlock(){
