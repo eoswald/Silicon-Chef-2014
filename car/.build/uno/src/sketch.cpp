@@ -1,3 +1,10 @@
+#include <Arduino.h>
+
+void setup();
+void loop();
+void forward(int speed);
+void reverse(int speed);
+#line 1 "src/sketch.ino"
 #define TOP_LEFT		 2
 #define TOP_RIGHT		 3
 #define BOTTOM_LEFT	 4
